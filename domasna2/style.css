@@ -1,0 +1,43 @@
+body {
+    
+    background-image: url(https://img.freepik.com/free-photo/top-view-delicious-mushroom-pizza-with-cheese-olives-tomatoes-dark-floor-italy-meal-dough-pizza-food_140725-101785.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#naslov{
+    font-weight: bold;
+    background-color: tomato;
+}
+h1{
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 6px black;
+}
+table{
+    border: 3px whitesmoke;
+    border-style: double;
+}
+.prvbox{    
+    color:white;
+    font-weight: bold;
+    background: linear-gradient( to right, tomato, rgb(118, 63, 63), rgba(163, 44, 163, 0.316) );
+}
+#name{
+    color:white;
+    font-weight: bold;
+    background: linear-gradient( to left, tomato, rgb(118, 63, 63), rgba(163, 44, 163, 0.316) );
+}
+.vtorbox{
+    background-color:hsl(0, 20%, 50%);
+    color: white;
+}
+#posledenbox{
+    color: white;
+    background-color: tomato;
+}
+.pizza{
+    width: 10%;
+    height: 10%;
+    position: relative;
+    left:10%;
+}
