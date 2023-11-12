@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the word</title>
+    <style>
+         body {
+            font-family: Verdana, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(69, 95, 27);
+            color: whitesmoke;
+        }
+        .sredina{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #guessInput {
+            padding: 8px;
+            font-size: 12px;
+            margin-top: 10px;
+            border: 1px solid #4f4999;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 2px rgba(39, 18, 94, 0.345);
+        }
+    </style>
+
+</head>
+<body>
+    <h1 class="sredina">Guess the word</h1>
+    <h2 class="sredina">Rules</h2>
+    <ul>
+        <li class="sredina">The game has 20 words, which are generated randomly.</li>
+        <li class="sredina">You have 5 chances to get the word right.</li>
+        <li class="sredina">The words are 8 letters long, from which you have the first 3 letters of the word at your disposal.</li>
+        <li class="sredina">Good luck have fun!</li>
+    </ul>
+    <h3 class="sredina">Game start</h3>
+    <p id="word" class="sredina"></p>
+    <p id="attempts" class="sredina">Attempts: <span id="attemptsCount">0</span></p>
+    <input type="text" id="guessInput" maxlength="8" > 
+    <button onclick="checkGuess()" >Check if correct</button>
+    <script>
+        let words=["gambling", "oatcakes", "proteins", "vacation", "football", "addition", "aircraft", "complete", "database", "dramatic", "exercise", "feedback", "friendly", "incident", "hospital", "majority", "notebook", "pipeline", "scenario", "software"];
+        let maxAttempts = 5;
+        let currentWord = "";
+        let displayedWord = [];
+        let attempts = 0;
+
+        function startGame() {
+            currentWord = words[Math.floor(Math.random() * words.length)];
+            displayedWord = currentWord.substring(0, 3).split('').concat(new Array(currentWord.length - 3).fill('_'));
+            attempts = 0;
+
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById('word').textContent = displayedWord.join(' ');
+            document.getElementById('attemptsCount').textContent = attempts;
+        }
+
+        function checkGuess() {
+            let guess = document.getElementById('guessInput').value.toLowerCase();
+
+            if (/^[a-z]+$/.test(guess)) {
+                if (guess.length === currentWord.length) {
+                    if (guess === currentWord) {
+                        alert('GGWP!');
+                        startGame();
+                    } else {
+                        attempts++;
+                        if (attempts >= maxAttempts) {
+                            alert('Sorry, you did not guess the word. The word was: ' + currentWord);
+                            startGame();
+                        }
+                    }
+
+                    updateDisplay();
+                } else {
+                    alert('You should only guess 8 letter words ');
+                }
+            } else {
+                alert('Do not use characters, only letters!');
+            }
+
+            document.getElementById('guessInput').value = '';
+        }
+        startGame();
+    </script>
+
+</body>
+</html>
