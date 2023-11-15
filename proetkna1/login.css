@@ -1,0 +1,55 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+}
+.header{
+    background-color: rgb(66, 70, 114); 
+    width: 500px;   
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid blue;
+}
+.footer{
+    display: flex;
+    border: 1px solid grey;
+    width: 500px;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: tomato;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    align-items: center;
+    background-color: white;
+    border: 1px solid grey;
+    padding: 20px;
+}
+input {
+    border: 2px solid gray;
+    width: 400px;
+    height: 40px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+h1{
+    color: whitesmoke;
+}
+button{
+    width: 20%;
+    background-color: beige;
+}
+body{
+    background-image:url(gym.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
